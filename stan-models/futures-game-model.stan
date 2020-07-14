@@ -18,9 +18,7 @@ model {
 }
 generated quantities{
   vector[J] y_rep;
-  vector[J] home_win;
   for (i in 1:J){
     y_rep[i] = normal_rng(alpha + x[i,] * beta, sigma);
-    home_win[i] = y_rep[i] > 0;
   }
 }
